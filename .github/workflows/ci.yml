@@ -24,9 +24,13 @@ jobs:
           version: v0.6.2+registry.0.2.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check Lune/Pesde versions
+      - name: Check Pesde Version
         run: |
-          pesde -v && lune -V
+          pesde -v
+
+      - name: Check Lune Version
+        run: |
+          lune -V
 
       - name: Setup Lune
         run: |
@@ -55,9 +59,13 @@ jobs:
           version: v0.6.2+registry.0.2.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check Lune/Pesde versions
+      - name: Check Pesde Version
         run: |
-          pesde -v && lune -V
+          pesde -v
+
+      - name: Check Lune Version
+        run: |
+          lune -V
 
       - name: Setup Lune
         run: |
@@ -86,9 +94,13 @@ jobs:
           version: v0.6.2+registry.0.2.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check Lune/Pesde versions
+      - name: Check Pesde Version
         run: |
-          pesde -v && lune -V
+          pesde -v
+
+      - name: Check Lune Version
+        run: |
+          lune -V
 
       - name: Install Pesde Packages
         run: |
@@ -113,9 +125,13 @@ jobs:
           version: v0.6.2+registry.0.2.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check Lune/Pesde versions
+      - name: Check Pesde Version
         run: |
-          pesde -v && lune -V
+          pesde -v
+
+      - name: Check Lune Version
+        run: |
+          lune -V
 
       - name: Setup Lune
         run: |
