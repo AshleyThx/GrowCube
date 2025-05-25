@@ -1,0 +1,10 @@
+std = "robloxpatch"
+
+exclude = ["net/**", "*_packages/**", "include/**", "build/**"]
+
+[lints]
+multiple_statements = "allow"
+unused_variable = "allow"
+
+[config]
+global_usage = { ignore_pattern = "__DEV__" }

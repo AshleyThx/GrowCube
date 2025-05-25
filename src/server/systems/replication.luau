@@ -25,16 +25,16 @@ return {
 	name = "Server Replication",
 	system = function(world: jecs.World)
 		local full_packet = nil
-		for _, player in net.replication.requestFullPacket.iter() do
+		for _, reciever in net.replication.requestFullPacket.iter() do
 			full_packet = full_packet or replication:full()
 			for component, data in full_packet do
-				fire(player, component, data, world)
+				fire(reciever, component, data, world)
 			end
 		end
 		
 		local changes, deleted = replication:delta()
-		for component, players in changes do
-			for player, entities in players do
+		for component, recievers in changes do
+			for player, entities in recievers do
 				fire(player, component, entities, world)
 			end
 		end

@@ -43,6 +43,8 @@ rojo = { name = "pesde/rojo", version = "^7.4.4", target = "lune" }
 asphalt = { name = "pesde/asphalt", version = "^1.0.0-pre.8", target = "lune" }
 blink = { name = "pesde/blink", version = "^0.17.0", target = "lune" }
 stylua = { name = "pesde/stylua", version = "^2.1.0", target = "lune" }
+selene = { name = "pesde/selene", version = "^0.28.0", target = "lune" }
+luaulsp = { name = "pesde/luau_lsp", version = "^1.47.0", target = "lune" }
 
 [engines]
 pesde = "^0.6.0"

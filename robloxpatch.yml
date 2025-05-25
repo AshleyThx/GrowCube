@@ -1,0 +1,6 @@
+base: roblox
+name: robloxpatch
+globals:
+  require:
+    args:
+      - type: any

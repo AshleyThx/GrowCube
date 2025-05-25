@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  analysis:
+    name: Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Pesde
+        uses: lumin-org/setup-pesde@v0.4.1
+        with:
+          cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Pesde Packages
+        run: |
+          pesde install --force
+
+      - name: Running Analysis Script
+        run: |
+          pesde run .lune/analyze.luau
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Pesde
+        uses: lumin-org/setup-pesde@v0.4.1
+        with:
+          cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Pesde Packages
+        run: |
+          pesde install --force
+
+      - name: Run Linter
+        run: |
+          selene src --allow-warnings --quiet
+
+  style:
+    name: Check Style
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Pesde
+        uses: lumin-org/setup-pesde@v0.4.1
+        with:
+          cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Pesde Packages
+        run: |
+          pesde install --force
+
+      - name: Run Linter
+        run: |
+          selene src --allow-warnings --quiet
+
+  build:
+    name: Attempt Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Pesde
+        uses: lumin-org/setup-pesde@v0.4.1
+        with:
+          cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Pesde Packages
+        run: |
+          pesde install --force
+
+      - name: Run Build Script
+        run: |
+          pesde run build
