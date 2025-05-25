@@ -17,9 +17,9 @@ default = "https://github.com/UpliftGames/wally-index"
 [scripts]
 roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau"
 sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
-build = ".lune/build.luau"
-serve = ".lune/serve.luau"
-srcmap = ".lune/srcmap.luau"
+build = "scripts/build.luau"
+serve = "scripts/serve.luau"
+srcmap = "scripts/srcmap.luau"
 
 [dependencies]
 jecs = { name = "marked/jecs", version = "^0.6.0" }
