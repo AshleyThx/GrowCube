@@ -23,6 +23,10 @@ jobs:
           cache: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Lune
+        run: |
+          lune setup
+
       - name: Install Pesde Packages
         run: |
           pesde install --force
@@ -44,6 +48,10 @@ jobs:
         with:
           cache: true
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Lune
+        run: |
+          lune setup
 
       - name: Install Pesde Packages
         run: |
@@ -67,6 +75,10 @@ jobs:
           cache: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Lune
+        run: |
+          lune setup
+
       - name: Install Pesde Packages
         run: |
           pesde install --force
@@ -89,10 +101,14 @@ jobs:
           cache: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Lune
+        run: |
+          lune setup
+
       - name: Install Pesde Packages
         run: |
           pesde install --force
 
       - name: Run Build Script
         run: |
-          pesde run build
+          lune run scripts/build.luau
