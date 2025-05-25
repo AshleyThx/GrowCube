@@ -21,6 +21,7 @@ jobs:
         uses: lumin-org/setup-pesde@v0.4.1
         with:
           cache: true
+          version: 0.6.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Lune
@@ -47,6 +48,7 @@ jobs:
         uses: lumin-org/setup-pesde@v0.4.1
         with:
           cache: true
+          version: 0.6.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Lune
@@ -73,6 +75,7 @@ jobs:
         uses: lumin-org/setup-pesde@v0.4.1
         with:
           cache: true
+          version: 0.6.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Lune
@@ -99,6 +102,7 @@ jobs:
         uses: lumin-org/setup-pesde@v0.4.1
         with:
           cache: true
+          version: 0.6.2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Lune

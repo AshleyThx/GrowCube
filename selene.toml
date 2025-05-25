@@ -1,6 +1,6 @@
 std = "robloxpatch"
 
-exclude = ["net/**", "*_packages/**", "include/**", "build/**"]
+exclude = ["net/**", "*_packages/**", "include/**", "build/**", ".pesde/**"]
 
 [lints]
 multiple_statements = "allow"

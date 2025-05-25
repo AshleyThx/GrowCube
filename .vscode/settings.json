@@ -25,6 +25,7 @@
     ".pesde/**",
     "*_packages/**",
     "net/**",
-    "include/**"
+    "include/**",
+    "build/**",
   ]
 }
