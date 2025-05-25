@@ -1,0 +1,30 @@
+{
+  "luau-lsp.completion.enableFragmentAutocomplete": true,
+  "luau-lsp.completion.autocompleteEnd": true,
+  "luau-lsp.completion.imports.enabled": true,
+  "luau-lsp.completion.imports.requireStyle": "alwaysRelative",
+  "luau-lsp.completion.imports.separateGroupsWithLine": true,
+  "luau-lsp.completion.imports.stringRequires.enabled": true,
+  "luau-lsp.completion.showPropertiesOnMethodCall": true,
+  "luau-lsp.diagnostics.strictDatamodelTypes": true,
+  "luau-lsp.diagnostics.workspace": true,
+  "luau-lsp.fflags.enableNewSolver": true,
+  "luau-lsp.hover.multilineFunctionDefinitions": true,
+  "luau-lsp.hover.showTableKinds": true,
+  "luau-lsp.inlayHints.functionReturnTypes": true,
+  "luau-lsp.plugin.enabled": false,
+  "luau-lsp.sourcemap.useVSCodeWatcher": true,
+  "luau-lsp.types.robloxSecurityLevel": "LocalUserSecurity",
+  "luau-lsp.completion.imports.suggestRequires": false,
+  "luau-lsp.diagnostics.includeDependents": true,
+  "luau-lsp.inlayHints.makeInsertable": true,
+  "luau-lsp.types.definitionFiles": [
+    "dfiles/global.d.luau"
+  ],
+  "luau-lsp.ignoreGlobs": [
+    ".pesde/**",
+    "*_packages/**",
+    "net/**",
+    "include/**"
+  ]
+}

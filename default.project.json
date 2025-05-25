@@ -1,0 +1,81 @@
+{
+  "name": "GrowCubes",
+  "emitLegacyScripts": false,
+  "servePlaceIds": [
+    101868610474566,
+    0
+  ],
+  "placeId": 101868610474566,
+  "gameId": 7677331639,
+  "globIgnorePaths": [
+    "**/.luaurc"
+  ],
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "shared": {
+        "$path": "src/shared",
+        "net": {
+          "$path": "net/build/types.luau"
+        }
+      },
+      "clientcore": {
+        "$path": "src/client",
+        "net": {
+          "$path": "net/build/client.luau"
+        }
+      },
+      "packages": {
+        "$path": "roblox_packages"
+      },
+      "include": {
+        "$path": "include"
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "ReplicatedFirst": {
+      "$path": "src/clientfirst",
+      "$ignoreUnknownInstances": true
+    },
+    "ServerScriptService": {
+      "servercore": {
+        "$path": "src/server",
+        "net": {
+          "$path": "net/build/server.luau"
+        }
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "Workspace": {
+      "map": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      },
+      "characters": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      },
+      "gardens": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      },
+      "base": {
+        "$className": "Part",
+        "$properties": {
+          "Size": [
+            2048,
+            8,
+            2048
+          ],
+          "Position": [
+            0,
+            -4,
+            0
+          ],
+          "Anchored": true
+        }
+      },
+      "$ignoreUnknownInstances": true
+    }
+  }
+}

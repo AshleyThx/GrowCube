@@ -1,0 +1,1 @@
+declare _G: typeof(_G) & {__DEV__: true | false}

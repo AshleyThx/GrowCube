@@ -1,0 +1,7 @@
+*_packages
+*.lock
+build
+sourcemap.json
+net
+.pesde
+.env

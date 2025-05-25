@@ -1,0 +1,49 @@
+name = "ashthx/cubegrowth"
+version = "0.1.0"
+description = "A simple game about growing weird cubes"
+authors = ["AshleyThx"]
+license = "MIT"
+private = true
+
+[target]
+environment = "roblox"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
+
+[wally_indices]
+default = "https://github.com/UpliftGames/wally-index"
+
+[scripts]
+roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau"
+sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
+build = ".lune/build.luau"
+serve = ".lune/serve.luau"
+srcmap = ".lune/srcmap.luau"
+
+[dependencies]
+jecs = { name = "marked/jecs", version = "^0.6.0" }
+jabby = { wally = "alicesaidhi/jabby", version = "^0.2.3" }
+planck = { wally = "yetanotherclown/planck", version = "^0.2.0-rc.2" }
+planckjabby = { wally = "yetanotherclown/planck-jabby", version = "^0.2.0-rc.1" }
+react = { wally = "jsdotlua/react", version = "^17.2.1" }
+reactroblox = { wally = "jsdotlua/react-roblox", version = "^17.2.1" }
+rewire = { wally = "sayhisam1/rewire", version = "^0.3.0" }
+lapis = { wally = "nezuo/lapis", version = "^0.3.4" }
+lapismock = { wally = "nezuo/data-store-service-mock", version = "^0.3.8" }
+sift = { wally = "csqrl/sift", version = "^0.0.11" }
+future = { wally = "yetanotherclown/luau-futures", version = "^2.0.0-beta.3" }
+t = { wally = "osyrisrblx/t", version = "^3.1.1" }
+parallel = { wally = "artzified/parallelizer", version = "^2.0.0" }
+cmdr = { wally = "evaera/cmdr", version = "^1.12.0" }
+
+[dev_dependencies]
+scripts = { name = "pesde/scripts_rojo", version = "^0.1.0", target = "lune" }
+rojo = { name = "pesde/rojo", version = "^7.4.4", target = "lune" }
+asphalt = { name = "pesde/asphalt", version = "^1.0.0-pre.8", target = "lune" }
+blink = { name = "pesde/blink", version = "^0.17.0", target = "lune" }
+stylua = { name = "pesde/stylua", version = "^2.1.0", target = "lune" }
+
+[engines]
+pesde = "^0.6.0"
+lune = "^0.8.0"
