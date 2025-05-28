@@ -22,10 +22,10 @@
     "dfiles/global.d.luau"
   ],
   "luau-lsp.ignoreGlobs": [
-    ".pesde/**",
+    "**/.pesde/**",
     "*_packages/**",
     "net/**",
     "include/**",
-    "build/**",
+    "build/**"
   ]
 }

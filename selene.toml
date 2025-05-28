@@ -1,10 +1,11 @@
-std = "robloxpatch"
+std = "roblox"
 
 exclude = ["net/**", "*_packages/**", "include/**", "build/**", ".pesde/**"]
 
 [lints]
 multiple_statements = "allow"
 unused_variable = "allow"
+incorrect_standard_library_use = "allow"
 
 [config]
 global_usage = { ignore_pattern = "__DEV__" }
