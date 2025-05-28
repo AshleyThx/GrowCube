@@ -24,7 +24,7 @@ return {
 				growth = 0,
 				pos = Vector3.zero,
 			})
-			world:set(test, components.PlantModificator, {
+			world:set(test, components.PlantModificators, {
 				growth_multiplier = 1,
 				cost_multiplier = 1,
 			})

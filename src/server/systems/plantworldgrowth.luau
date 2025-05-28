@@ -17,7 +17,7 @@ return {
 	name = "Plant World Growth",
 	system = function(world: types.World)
 		local dt = useDeltaTime()
-		for id, p_type, p_world, p_mod in world:query(components.PlantType, components.PlantWorld, components.PlantModificator):iter() do
+		for id, p_type, p_world, p_mod in world:query(components.PlantType, components.PlantWorld, components.PlantModificators):iter() do
 			local growth: number = p_world.growth or 0
 			if growth >= 1 then continue end
 
