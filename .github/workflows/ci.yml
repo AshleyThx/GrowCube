@@ -22,23 +22,16 @@ jobs:
         with:
           cache: true
           version: v0.6.2+registry.0.2.2
+          lune_version: v0.8.9
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check Pesde Version
         run: |
           pesde -v
 
-      - name: Install Pesde Packages
-        run: |
-          pesde install --force
-
       - name: Check Lune Version
         run: |
           lune -V
-
-      - name: Setup Lune
-        run: |
-          lune setup
 
       - name: Running Analysis Script
         run: |
@@ -57,23 +50,16 @@ jobs:
         with:
           cache: true
           version: v0.6.2+registry.0.2.2
+          lune_version: v0.8.9
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check Pesde Version
         run: |
           pesde -v
 
-      - name: Install Pesde Packages
-        run: |
-          pesde install --force
-
       - name: Check Lune Version
         run: |
           lune -V
-
-      - name: Setup Lune
-        run: |
-          lune setup
 
       - name: Run Linter
         run: |
@@ -92,25 +78,18 @@ jobs:
         with:
           cache: true
           version: v0.6.2+registry.0.2.2
+          lune_version: v0.8.9
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check Pesde Version
         run: |
           pesde -v
 
-      - name: Install Pesde Packages
-        run: |
-          pesde install --force
-
       - name: Check Lune Version
         run: |
           lune -V
 
-      - name: Setup Lune
-        run: |
-          lune setup
-
-      - name: Run Linter
+      - name: Run Stylua
         run: |
           selene src --allow-warnings --quiet
 
@@ -127,23 +106,16 @@ jobs:
         with:
           cache: true
           version: v0.6.2+registry.0.2.2
+          lune_version: v0.8.9
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check Pesde Version
         run: |
           pesde -v
 
-      - name: Install Pesde Packages
-        run: |
-          pesde install --force
-
       - name: Check Lune Version
         run: |
           lune -V
-
-      - name: Setup Lune
-        run: |
-          lune setup
 
       - name: Run Build Script
         run: |
