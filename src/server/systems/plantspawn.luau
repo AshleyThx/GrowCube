@@ -7,7 +7,7 @@ local sift = require(repstorage.packages.sift)
 
 local phases = require(repstorage.shared.phases).phases
 local components = require(repstorage.shared.components)
-local log = require(repstorage.shared.log)
+local log = require(repstorage.shared.utils.log)
 local types = require(repstorage.shared.types)
 local net = require(script.Parent.Parent.net)
 

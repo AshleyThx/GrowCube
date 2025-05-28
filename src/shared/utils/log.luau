@@ -30,14 +30,14 @@ local logger = {
 	},
 }
 
-local function formatLog(level: string, text: string, timestamp: number)
+local function formatLog(level_name: string, text: string, timestamp: number): string
 	local cur_time = DateTime.fromUnixTimestampMillis(timestamp)
 
 	local timestamp_text = if logger._config.extended_timestamp
 		then cur_time:FormatUniversalTime("MM.DD.YY HH:mm:ss-SSS", "en-us")
 		else cur_time:FormatUniversalTime("HH:mm:ss", "en-us")
 
-	return ("[%s] [%s]: %s"):format(timestamp_text, level, text)
+	return ("[%s] [%s]: %s"):format(timestamp_text, level_name, text)
 end
 
 local function logRobloxConsole(log_level: LogLevel, log: string)
@@ -54,46 +54,45 @@ local function logRobloxConsole(log_level: LogLevel, log: string)
 	--TODO: figure out how to output different levels like Luarmor
 end
 
-local function logText(level: keyof<typeof(LOG_LEVELS)>, text: string, timestamp: number?)
+local function logText(level_name: keyof<typeof(LOG_LEVELS)>, text: string, timestamp: number?): string
 	timestamp = timestamp or DateTime.now().UnixTimestampMillis
 
-	assert(typeof(level) == "string", "Invalid argument #1, string expected")
+	assert(typeof(level_name) == "string", "Invalid argument #1, string expected")
 	assert(typeof(text) == "string", "Invalid argument #2, string expected")
 	assert(typeof(timestamp) == "number" or timestamp == nil, "Invalid argument #3, number or nil expected")
 
-	local level_enum = LOG_LEVELS[level]
-	assert(level_enum, `No log level {level} found`)
+	local level_enum = LOG_LEVELS[level_name]
 
-	local log_text = formatLog(level, text, timestamp)
+	local log_text = formatLog(level_name, text, timestamp)
 
-	if level ~= "DEBUG" or logger._config.allow_debug then pcall(logRobloxConsole, level_enum, log_text) end
+	if level_name ~= "DEBUG" or logger._config.allow_debug then pcall(logRobloxConsole, level_enum, log_text) end
 
 	return log_text
 end
 
-local function logtrace(text: string, timestamp: number?)
+local function logtrace(text: string, timestamp: number?): string
 	return logText("TRACE", text, timestamp)
 end
-local function logdebug(text: string, timestamp: number?)
+local function logdebug(text: string, timestamp: number?): string
 	return logText("DEBUG", text, timestamp)
 end
-local function loginfo(text: string, timestamp: number?)
+local function loginfo(text: string, timestamp: number?): string
 	return logText("INFO", text, timestamp)
 end
-local function logfatal(text: string, timestamp: number?)
+local function logfatal(text: string, timestamp: number?): string
 	return logText("FATAL", text, timestamp)
 end
-local function logwarn(text: string, timestamp: number?)
+local function logwarn(text: string, timestamp: number?): string
 	return logText("WARNING", text, timestamp)
 end
-local function logerror(text: string, timestamp: number?)
+local function logerror(text: string, timestamp: number?): string
 	return logText("ERROR", text, timestamp)
 end
 
 local function setupLogger(config: {
 	ExtendedTimestamp: boolean?,
 	AllowDebugOutput: boolean?,
-})
+}): typeof(logger)
 	assert(typeof(config) == "table", "Invalid argument #1, table expected")
 	assert(
 		typeof(config.ExtendedTimestamp) == "boolean" or config.ExtendedTimestamp == nil,

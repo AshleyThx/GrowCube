@@ -10,7 +10,7 @@ local rewire = require(repstorage.packages.rewire)
 local world = require(repstorage.shared.world)
 local scheduler = require(repstorage.shared.scheduler)
 local components = require(repstorage.shared.components)
-local log = require(repstorage.shared.log)
+local log = require(repstorage.shared.utils.log)
 
 local function run(containers: {Folder}): (typeof(world))
 	local reloader = rewire.HotReloader.new()
